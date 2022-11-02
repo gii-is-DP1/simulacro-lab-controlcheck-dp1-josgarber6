@@ -13,7 +13,6 @@
             <th>Name</th>
             <th>Price</th>
             <th>Product Type</th>
-            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -28,13 +27,9 @@
                 <td>
                     <c:out value="${p.product_type}"/>
                 </td>
-                <td>
-                    <c:out value="${ach.threshold}"/>
-                </td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
-    <a class="btn btn-default" href="/statistics/achievements/new">Create new achievement</a>
 
 </petclinic:layout>

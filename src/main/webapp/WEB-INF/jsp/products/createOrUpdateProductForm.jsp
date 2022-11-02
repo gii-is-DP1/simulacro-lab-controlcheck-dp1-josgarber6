@@ -4,11 +4,9 @@
 <%@ taglib prefix="petclinic" tagdir="/WEB-INF/tags" %>
 
 <petclinic:layout pageName="products">
-<title>Product</title>
-</head>
-<body>
+	<jsp:body>
 	<h2>Product</h2>
-	<mvc:form modelAttribute="product">
+	<mvc:form modelAttribute="product" class="form-horizontal">
 		<table>
 			<tr>
 				<td><mvc:label path="name">Name:</mvc:label></td>
@@ -19,12 +17,9 @@
 				<td><mvc:input path="price" /></td>
 			</tr>
 			<tr>
-				<td><mvc:label path="productType">Select product type:</mvc:label></td>
-        <mvc:select path="productType">
-          <mvc:option value="Accesories"/>
-          <mvc:option value="Food"/>
-        </mvc:select>
-        </td>
+				<td><mvc:label path="productType">Select product type:</mvc:label>
+        <petclinic:selectField name="productType" label="Product Type" names="${product_types}" size="5"/>
+			</td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="Save" /></td>
@@ -32,5 +27,5 @@
 		</table>
 	</mvc:form>
 
-</body>
+</jsp:body>
 </petclinic:layout>

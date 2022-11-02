@@ -11,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -23,7 +22,7 @@ public class ProductController {
 
   private ProductService productService;
   public static final String LIST_ALL_PRODUCTS = "productsListing";
-  public static final String CREATE_PRODUCT = "createOrUpdateProductForm";
+  public static final String CREATE_PRODUCT = "/products/createOrUpdateProductForm";
 
   @Autowired
   public ProductController(ProductService productService) {

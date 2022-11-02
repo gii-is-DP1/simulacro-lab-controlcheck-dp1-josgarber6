@@ -19,7 +19,7 @@ public interface ProductRepository extends CrudRepository<Product, Integer>{
 
     @Query("SELECT p FROM Product p WHERE p.name = :name")
     public Product findByName(@Param("name") String name);
-    // public Product save(Product p);
+    public Product save(Product p);
     @Query("SELECT pt FROM ProductType pt WHERE pt.name = :name")
     public ProductType findTypeByName(@Param("name") String name);
 
