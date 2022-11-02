@@ -9,16 +9,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductTypeFormatter implements Formatter<ProductType>{
 
+    private ProductRepository productRepository;
+
     @Override
     public String print(ProductType object, Locale locale) {
-        // TODO Auto-generated method stub
-        return null;
+        return object.getName();
     }
 
     @Override
     public ProductType parse(String text, Locale locale) throws ParseException {
-        // TODO Auto-generated method stub
-        return null;
+        String[] names = text.replace("[", "").replace("]", "").split(",");
+        ProductType p = productRepository.findTypeByName(names[0]);
+        return p;
     }
     
 }
