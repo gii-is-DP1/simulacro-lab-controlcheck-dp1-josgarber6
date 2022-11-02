@@ -16,10 +16,13 @@ import lombok.Setter;
 @Entity
 @Table(name = "products")
 public class Product extends NamedEntity {
+    
     @NotEmpty
     @Min(0)
     private double price;
 
     @ManyToOne
     private ProductType productType;
+
+
 }

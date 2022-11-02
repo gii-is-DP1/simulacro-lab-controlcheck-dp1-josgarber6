@@ -12,10 +12,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Integer>{
     public List<Product> findAll();
+
+    @Query("SELECT pt from ProductType pt")
     public List<ProductType> findAllProductTypes();
     public Optional<Product> findById(int id);
 
-    @Query("SELECT p FROM Product p WHERE pt.name = :name")
+    @Query("SELECT p FROM Product p WHERE p.name = :name")
     public Product findByName(@Param("name") String name);
     // public Product save(Product p);
     @Query("SELECT pt FROM ProductType pt WHERE pt.name = :name")
